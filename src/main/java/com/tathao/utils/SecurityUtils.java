@@ -28,7 +28,7 @@ public class SecurityUtils {
 	public static boolean hasPermission(HttpServletRequest request) {
 		
 		String urlPattern = UrlPatternUtils.getUrlPattern(request);
-		
+		System.out.println("SecurityUtils:: urlPatter = " + urlPattern);
 		Set<String> allRoles = SecurityConfig.getAllAppRoles();
 		
 		for(String role : allRoles) {
@@ -39,6 +39,7 @@ public class SecurityUtils {
 			if(urlPatterns != null && urlPatterns.contains(urlPattern)) {
 				return true;
 			}
+			
 		}
 		return false;
 		

@@ -8,13 +8,14 @@ import java.util.Set;
 
 public class SecurityConfig {
 	
-	public static final String ROLE_ADMIN = "ADMIN";
-	public static final String ROLE_USER = "USER";
+	public static final String ROLE_ADMIN = "admin";
+	public static final String ROLE_USER = "user";
 	
 	private static final Map<String, List<String>> mapConfig = new HashMap<String, List<String>>();
 	
 	// static block , it call when class has been called
 	static {
+		System.out.println("SecurityConfig:: static block has run");
 		init();
 	}
 	

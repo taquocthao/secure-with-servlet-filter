@@ -4,6 +4,18 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <!-- Filter -->
+  <filter>
+  	<filter-name>SecurityFilter</filter-name>
+  	<filter-class>com.tathao.filter.SecurityFilter</filter-class>
+  </filter>
+  <!-- filter mapping  -->
+  <filter-mapping>
+  	<filter-name>SecurityFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- Servlet -->
   <servlet>
   	<servlet-name>MainController</servlet-name>
   	<display-name>MainController</display-name>
@@ -28,6 +40,25 @@
   	<description></description>
   	<servlet-class>controller.UserController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Logout</servlet-name>
+  	<display-name>Logout</display-name>
+  	<description></description>
+  	<servlet-class>controller.LogoutController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AdminTaskController</servlet-name>
+  	<display-name>AdminTaskController</display-name>
+  	<description></description>
+  	<servlet-class>controller.AdminTaskController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UserTaskController</servlet-name>
+  	<display-name>UserTaskController</display-name>
+  	<description></description>
+  	<servlet-class>controller.UserTaskController</servlet-class>
+  </servlet>
+  <!-- Servlet mapping -->
   <servlet-mapping>
   	<servlet-name>MainController</servlet-name>
   	<url-pattern>/home</url-pattern>
@@ -44,4 +75,17 @@
   	<servlet-name>UserController</servlet-name>
   	<url-pattern>/userInfo</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Logout</servlet-name>
+  	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminTaskController</servlet-name>
+  	<url-pattern>/adminTask</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserTaskController</servlet-name>
+  	<url-pattern>/userTask</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

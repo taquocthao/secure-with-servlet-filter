@@ -12,8 +12,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.tathao.config.SecurityConfig;
 import com.tathao.model.Role;
 import com.tathao.model.UserAccount;
 import com.tathao.utils.AppUtils;
@@ -24,7 +22,7 @@ public class SecurityFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		
+		System.out.println("Init filter");
 	}
 
 	@Override
@@ -36,7 +34,7 @@ public class SecurityFilter implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
 		
-		System.out.println("Servlet Filter:: dofilter for request " + req.getContextPath());
+		System.out.println("Servlet Filter:: dofilter for request " + req.getServletPath());
 		
 		String servletPath = req.getServletPath();
 		
@@ -65,7 +63,7 @@ public class SecurityFilter implements Filter {
 				return;
 			}
 			
-			boolean hasPermission = SecurityUtils.hasPermission(req);
+			boolean hasPermission = SecurityUtils.hasPermission(wrapRequest);
 			
 			if(!hasPermission) {
 				RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/accessDenied.jsp");

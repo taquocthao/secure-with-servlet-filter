@@ -14,5 +14,10 @@
 		<label>Password: </label><input type="text" name="password" /><br/>
 		<input type="submit" value="Login" />
 	</form>
+	<br/>
+	<div>
+		<label style="font-weight: bold;">User account: </label><span> user/123 </span><br/>
+		<label style="font-weight: bold;">Admin account: </label><span> admin/123 </span>
+	</div>
 </body>
 </html>

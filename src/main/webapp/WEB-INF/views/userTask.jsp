@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>User Info</title>
+<title>User task</title>
 </head>
 <body>
 	<jsp:include page="_menu.jsp"></jsp:include>
-	<h3>Hello : ${loginedUser.username }</h3>
+	<h3>User task</h3>
 </body>
 </html>

@@ -5,6 +5,6 @@
 <a href="${pageContext.request.contextPath }/adminTask">Admin Task</a> ||
 <a href="${pageContext.request.contextPath }/userInfo">User Info</a> ||
 <a href="${pageContext.request.contextPath }/login">Login</a> ||
-<a href="${pageContext.request.contextPath }/login">Logout</a>
+<a href="${pageContext.request.contextPath }/logout">Logout</a>
 &nbsp;
-<span>Welcome, <span style="color: red">${username }</span></span>
+<span>Welcome, <span style="color: red">${loginedUser.username }</span></span>
